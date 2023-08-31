@@ -458,7 +458,7 @@ const ChatScreen = ({ navigation, route }) => {
         keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
       >
         <ImageBackground
-          source={require('../assets/chatBg.png')}
+          source={require('../assets/singleChatBg.webp')}
           className='flex-1'
         >
           {chatId === null && <Badge firstName={firstName} type={'new'} />}
