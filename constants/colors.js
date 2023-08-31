@@ -1,0 +1,32 @@
+// colors
+
+export default {
+  primary: '#f7287b',
+  accent: '#c717fc',
+  lightBlue: '#ADD8E6',
+  coral: '#FF7F50',
+  orchid: '#DA70D6',
+  teal: '#008080',
+  goldenrod: '#DAA520',
+  slateBlue: '#6A5ACD',
+  crimson: '#DC143C',
+  oliveGreen: '#808000',
+  lavender: '#E6E6FA',
+  darkMagenta: '#8B008B',
+  blue: '#3498db',
+  lightGrey: '#bdc3c7',
+  mintGreen: '#98FF98',
+  rose: '#FF007F',
+  royalBlue: '#4169E1',
+  seaGreen: '#2E8B57',
+  salmon: '#FA8072',
+  skyBlue: '#87CEEB',
+  gold: '#FFD700',
+  indigo: '#4B0082',
+  turquoise: '#40E0D0',
+  peach: '#FFDAB9',
+  steelBlue: '#4682B4',
+  sandyBrown: '#F4A460',
+  cornflowerBlue: '#6495ED',
+  darkOrange: '#FF8C00'
+}
