@@ -33,24 +33,24 @@ export default function MainNavigator () {
   const notificationListener = useRef()
   const responseListener = useRef()
 
-  useEffect(() => {
-    registerForPushNotificationsAsync().then(token => setExpoPushToken(token))
+  // useEffect(() => {
+  //   registerForPushNotificationsAsync().then(token => setExpoPushToken(token))
 
-    notificationListener.current =
-      Notifications.addNotificationReceivedListener(notification => {
-        setNotification(notification)
-      })
+  //   notificationListener.current =
+  //     Notifications.addNotificationReceivedListener(notification => {
+  //       setNotification(notification)
+  //     })
 
-    responseListener.current =
-      Notifications.addNotificationResponseReceivedListener(response => {
-        console.log(response)
-      })
+  //   responseListener.current =
+  //     Notifications.addNotificationResponseReceivedListener(response => {
+  //       console.log(response)
+  //     })
 
-    return () => {
-      Notifications.removeNotificationSubscription(notificationListener.current)
-      Notifications.removeNotificationSubscription(responseListener.current)
-    }
-  }, [])
+  //   return () => {
+  //     Notifications.removeNotificationSubscription(notificationListener.current)
+  //     Notifications.removeNotificationSubscription(responseListener.current)
+  //   }
+  // }, [])
 
   useEffect(() => {
     const app = FirebaseApp()
@@ -165,37 +165,37 @@ export default function MainNavigator () {
   )
 }
 
-async function registerForPushNotificationsAsync () {
-  let token
+// async function registerForPushNotificationsAsync () {
+//   let token
 
-  if (Platform.OS === 'android') {
-    await Notifications.setNotificationChannelAsync('default', {
-      name: 'default',
-      importance: Notifications.AndroidImportance.MAX,
-      vibrationPattern: [0, 250, 250, 250],
-      lightColor: '#FF231F7C'
-    })
-  }
+//   if (Platform.OS === 'android') {
+//     await Notifications.setNotificationChannelAsync('default', {
+//       name: 'default',
+//       importance: Notifications.AndroidImportance.MAX,
+//       vibrationPattern: [0, 250, 250, 250],
+//       lightColor: '#FF231F7C'
+//     })
+//   }
 
-  if (Device.isDevice) {
-    const { status: existingStatus } = await Notifications.getPermissionsAsync()
-    let finalStatus = existingStatus
-    if (existingStatus !== 'granted') {
-      const { status } = await Notifications.requestPermissionsAsync()
-      finalStatus = status
-    }
-    if (finalStatus !== 'granted') {
-      alert('Failed to get push token for push notification!')
-      return
-    }
-    token = (
-      await Notifications.getExpoPushTokenAsync({
-        projectId: '9f4924ec-a5da-4437-a439-4e6569f9803d'
-      })
-    ).data
-  } else {
-    alert('Must use physical device for Push Notifications')
-  }
+//   if (Device.isDevice) {
+//     const { status: existingStatus } = await Notifications.getPermissionsAsync()
+//     let finalStatus = existingStatus
+//     if (existingStatus !== 'granted') {
+//       const { status } = await Notifications.requestPermissionsAsync()
+//       finalStatus = status
+//     }
+//     if (finalStatus !== 'granted') {
+//       alert('Failed to get push token for push notification!')
+//       return
+//     }
+//     token = (
+//       await Notifications.getExpoPushTokenAsync({
+//         projectId: '9f4924ec-a5da-4437-a439-4e6569f9803d'
+//       })
+//     ).data
+//   } else {
+//     alert('Must use physical device for Push Notifications')
+//   }
 
-  return token
-}
+//   return token
+// }

@@ -44,12 +44,12 @@ export const sendTextMessage = async (
 
   otherUsers = chatUsers.filter(uid => uid !== senderData.uid)
 
-  await sendPushNotification(
-    otherUsers,
-    senderData.firstName,
-    textMessage,
-    chatId
-  )
+  // await sendPushNotification(
+  //   otherUsers,
+  //   senderData.firstName,
+  //   textMessage,
+  //   chatId
+  // )
 }
 
 export const sendImageMessage = async (chatId, senderId, imageMsg, replyTo) => {

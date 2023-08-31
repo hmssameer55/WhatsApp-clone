@@ -41,7 +41,7 @@ export const signup = async ({
 
     await saveUserToLocalStorage(uid, accessToken, expirationTime)
 
-    await savePushTokenToDB(userData)
+    // await savePushTokenToDB(userData)
 
     return { ...userData, token: accessToken }
   } catch (error) {
@@ -68,7 +68,7 @@ export const login = async ({ email, password }) => {
 
     await saveUserToLocalStorage(uid, accessToken, expirationTime)
 
-    await savePushTokenToDB(userData)
+    // await savePushTokenToDB(userData)
 
     return { ...userData, token: accessToken }
   } catch (error) {
@@ -78,7 +78,7 @@ export const login = async ({ email, password }) => {
 
 export const userLogout = userData => {
   return async dispatch => {
-    await removePushTokenFromDB(userData)
+    // await removePushTokenFromDB(userData)
     await AsyncStorage.removeItem('userData')
     dispatch(logout())
   }
