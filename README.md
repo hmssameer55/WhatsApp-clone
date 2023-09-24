@@ -2,13 +2,18 @@ This is a clone of Whatsapp, made with React Native and Firebase & Tailwind.
 
 ## Installation
 
-npm install to install all the dependencies.
-    
+    ```bash
+    npm install
+    # To install all the dependencies
+    ```
+
     ```bash
 
-npx expo start to run the app in development mode.
+npx expo start
 
-    ```bash
+# To start the expo server
+
+    ```
 
 ## Usage
 
@@ -21,4 +26,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT]()
-
